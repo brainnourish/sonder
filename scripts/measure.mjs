@@ -5,11 +5,22 @@
 //   node measure.mjs <url> [outFile.json]
 // Example:
 //   node measure.mjs https://garden-eight.com references/garden-eight/measure.json
-// Requires: npm i -D playwright && npx playwright install chromium
+// Requires Playwright in the project you run this from (npm i -D playwright &&
+// npx playwright install chromium), or installed globally.
 
-import { chromium } from "playwright";
+import { createRequire } from "node:module";
 import fs from "node:fs";
 import path from "node:path";
+
+// Resolve Playwright from the current folder (or a global install), not from
+// this script's folder, so the skill works without its own node_modules.
+let chromium;
+try {
+  ({ chromium } = createRequire(path.join(process.cwd(), "/"))("playwright"));
+} catch {
+  console.error("Playwright not found. Run: npm i -D playwright && npx playwright install chromium");
+  process.exit(1);
+}
 
 const [, , url, outFile] = process.argv;
 if (!url) {

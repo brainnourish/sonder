@@ -162,7 +162,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 ## Quick commands
 
 - "sonder brief" → Phase 0 to 3, producing `DESIGN.md`
-- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the 3-second test, and capture a 1440 screenshot plus a short screen recording for outreach
+- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the 3-second test, and capture a 1440 screenshot plus a short screen recording for outreach (`scripts/capture.mjs <url> <outDir> --video 6000`)
 - "sonder critique" → Phase 5 on whatever exists now
 - "sonder ship" → Phase 7, including setup and deployment
 
@@ -174,5 +174,5 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 - `references/concepting.md`: how to generate ambitious concepts and visible signature moments. Read in Phase 2.
 - `references/motion-playbook.md`: easing, timing, and performance rules. Read in Phase 3 and 6.
 - `references/reference-library.md`: curated premium reference sites by mood. Read in Phase 1 when the user has no references.
-- `scripts/capture.mjs`: Playwright screenshots at 390 and 1440, at scroll depths or as a timed frame sequence.
+- `scripts/capture.mjs`: Playwright screenshots at 390 and 1440 (add 768 with `--viewports 390,768,1440`), at scroll depths, as a timed frame sequence, or as a short video recording (`--video`). Run it from the project folder so it finds the project's Playwright.
 - `scripts/measure.mjs`: Playwright measurement of real computed type and color values on any URL.

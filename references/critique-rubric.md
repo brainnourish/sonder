@@ -57,7 +57,7 @@ After presenting scores, invite the user to give their own 1 to 5 scores before 
 
 ## Ship checklist (Phase 7)
 
-- [ ] Every section passes the rubric at 1440 and 390, and looks right at 768
+- [ ] Every section passes the rubric at 1440 and 390, and looks right at 768 (capture with `--viewports 390,768,1440`)
 - [ ] 3-second test passes on a real phone
 - [ ] 60fps on a mid-range phone; only transform and opacity animate; no layout shift
 - [ ] Lighthouse performance 85+ on mobile
