@@ -27,7 +27,6 @@ Check every item during Phase 3 and in every critique round. If a ban is broken,
 - Default tracking on large display type (big type almost always needs negative tracking)
 - Default line height on display type
 - Gradient-filled text
-- Serif headline that switches to italic halfway through (a current overused premium-SaaS trope) unless the concept truly calls for it
 
 ## Motion
 - Fade-up on every element as it enters

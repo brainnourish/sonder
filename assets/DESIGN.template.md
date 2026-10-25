@@ -29,7 +29,8 @@ Screenshots and measure.json files live in `/references/<site>/`.
 
 - **Concept:** [one sentence]
 - **Signature moment:** [the single moment people remember]
-- **How a first-time phone visitor sees it without doing anything:** [what happens in the first 3 seconds]
+- **Scale:** [simple page / journey site]
+- **How a first-time phone visitor meets it:** [simple page: what the first screen shows within 3 seconds, without doing anything. Journey site: the first-screen hook, and where in the journey the moment lands]
 - **Ambition check:** [Would this plausibly win Site of the Day? Why or why not]
 - **Why this concept fits the audience:** [one or two sentences]
 - **Biggest risk and how we avoid it:** [honest]
@@ -90,5 +91,5 @@ All items in Sonder's ban list apply. Project-specific bans:
 
 ## 10. Critique log
 
-| Round | Section | 3-second test | Top 3 fixed | Sonder scores | User scores |
+| Round | Section | First-screen test | Top 3 fixed | Sonder scores | User scores |
 |---|---|---|---|---|---|

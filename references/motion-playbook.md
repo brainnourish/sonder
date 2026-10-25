@@ -10,7 +10,7 @@ Motion is added in Phase 6, after the static page passes critique.
   - UI feedback (hover, press): 150 to 250ms, ease-out
   - Springs for physical objects that should settle (figures, cursors): stiffness moderate, low bounce
 - Headings may reveal line by line with a masked slide-up. Body copy at most fades. Most elements don't animate at all.
-- Motion should respond to the user (scroll, pointer, touch velocity) more than it plays on its own.
+- Supporting motion should respond to the user (scroll, pointer, touch velocity) more than it plays on its own. The signature moment is the exception: it may play on load when the concept calls for it. A still signature on a simple page needs no motion at all.
 - Never take control of scroll. Effects may read scroll position or velocity, never override it.
 - Every motion has a `prefers-reduced-motion` behavior (usually: show the end state).
 

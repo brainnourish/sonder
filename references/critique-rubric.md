@@ -2,11 +2,12 @@
 
 Used in Phase 5 (every section), Phase 6 (after motion), and Phase 7 (whole page).
 
-## Step 1: The 3-second test (always first)
+## Step 1: The first-screen test (always first)
 
-Look at the 390px captures, including the timed frame sequence for the signature moment, as a first-time visitor who does nothing: no scrolling, dragging, hovering, or tapping.
+Look at the 390px first screen (plus the timed frame sequence if anything moves on load) as a first-time visitor who does nothing: no scrolling, dragging, hovering, or tapping. Check DESIGN.md for whether the project is a simple page or a journey site.
 
-- Within 3 seconds, is the signature moment clearly happening on screen?
+- **Simple page:** within 3 seconds, is the signature clearly on screen? It may be still.
+- **Journey site:** within 3 seconds, is there a strong hook that clearly belongs to the concept and makes you want to keep going? Then scroll normally: does the signature moment land where DESIGN.md says, without needing a hidden control?
 - Is the key idea legible at normal phone reading distance? (Faint, tiny, or edge-hugging elements fail.)
 - Would this visitor be able to describe what makes the page special?
 
@@ -22,7 +23,7 @@ Also look for: empty areas that feel unfinished rather than intentional, copy th
 
 ## Step 3: Rubric (score 1 to 5 each)
 
-1. **Signature moment**: every visitor experiences it without effort; it is legible, memorable, and comes from the concept.
+1. **Signature moment**: every visitor reaches it without hunting (first screen on a simple page; hook first and moment later on a journey site); it is legible, memorable, and comes from the concept.
 2. **Typography**: real scale contrast, deliberate tracking and line height, no more than 2 to 3 families, display type feels designed.
 3. **Composition**: strong alignment, intentional asymmetry, generous and consistent spacing, clear focal point per view, no dead zones.
 4. **Restraint**: nothing decorative without purpose, no ban list items. (Restraint is not faintness: the key idea must still be loud enough.)
@@ -38,7 +39,7 @@ Also look for: empty areas that feel unfinished rather than intentional, copy th
 - 3 = competent but forgettable; a typical good AI-builder result.
 - 2 or lower = generic or broken.
 - When unsure between two scores, choose the lower.
-- Pass bar: 4 or higher on every dimension and a passing 3-second test.
+- Pass bar: 4 or higher on every dimension and a passing first-screen test.
 - Distinctiveness or Signature moment below 3 means revisit the concept, not the details.
 
 ### Calibrating with the user
@@ -47,7 +48,7 @@ After presenting scores, invite the user to give their own 1 to 5 scores before 
 
 ## Common fixes that move the score most
 
-- Make the signature moment play on its own and enlarge its key element.
+- Put the signature (or, on a journey site, its hook) on the first screen and enlarge its key element.
 - Increase display type size and tighten tracking.
 - Remove one element from every crowded view; fill or rebalance dead zones.
 - Replace boxed content with typographic hierarchy and hairlines.
@@ -58,7 +59,7 @@ After presenting scores, invite the user to give their own 1 to 5 scores before 
 ## Ship checklist (Phase 7)
 
 - [ ] Every section passes the rubric at 1440 and 390, and looks right at 768 (capture with `--viewports 390,768,1440`)
-- [ ] 3-second test passes on a real phone
+- [ ] First-screen test passes on a real phone
 - [ ] 60fps on a mid-range phone; only transform and opacity animate; no layout shift
 - [ ] Lighthouse performance 85+ on mobile
 - [ ] Images compressed and sized; videos compressed with poster frames

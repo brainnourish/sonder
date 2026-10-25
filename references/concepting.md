@@ -25,20 +25,25 @@ Signs a concept is too safe:
 
 If all three concepts show these signs, discard them and think again before presenting.
 
+## Scale the signature to the project
+
+Decide this before concepting and record it in DESIGN.md:
+- **Simple page** (waitlist, single landing page, one-pager): the signature is on the first screen. It can be still: striking type, a composition, an image, a material. Motion is optional, never required. If it does move, it plays without the visitor doing anything.
+- **Journey site** (several sections or pages telling a longer story): the biggest moment can arrive later in the journey. The first screen must still carry a strong hook that clearly belongs to the same idea and makes people want to keep going, and the moment itself is reached by normal scrolling or navigation.
+
 ## The signature moment
 
 One moment people would describe to a friend. It must:
 - come from the concept, not be added on top
-- be experienced by every visitor **without any action**: it plays, reveals, or happens on its own within about 3 seconds of landing. Interactions (drag, hover, tap, scroll) can deepen it but must never be the only way to see it, because most visitors will never discover a hidden control
+- be reached by every visitor without hunting for it: on a simple page it is on the first screen within about 3 seconds; on a journey site the first screen carries its hook and normal scrolling or navigation delivers it. Interactions (drag, hover, tap) can deepen it but must never be the only way to see it, because most visitors will never discover a hidden control
 - be legible on a phone at normal reading distance
-- run at 60fps
+- if it moves, run at 60fps
 - never block the main action or trap the user; if it plays once, offer a small replay control
 
 ## Honest risk check
 
 For each concept, name the biggest way it could look generic or AI-made, and the biggest way visitors could miss it. Common traps:
 - Blueprint grids, mono labels, and corner brackets (the default dev-tool look)
-- Serif headline turning italic halfway (the default premium-SaaS look)
 - Scroll-jacked "storytelling" that feels like a template
 - A mascot that appears at many sizes and turns cute instead of premium
 - Any decoration showing fake data or specs

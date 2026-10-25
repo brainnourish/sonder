@@ -3,7 +3,7 @@ name: sonder
 description: Sonder is a repeatable system for designing and building premium, award-level websites and web apps that never look AI-generated or vibe-coded. Use this skill whenever the user wants to build, redesign, rebrand, or refine a website, landing page, waitlist page, portfolio, studio site, product site, or web app UI, or asks for something "premium", "beautiful", "clean", "not vibe coded", "Awwwards-level", or "like [reference site]". Also use it for concept redesigns of a prospect's homepage, for design direction or concepting before code, for deploying and setting up a finished site, and whenever the user says "run sonder", "sonder brief", "sonder concept", "sonder critique", "sonder ship", or names a phase. Use it even if the user only gives a one-line request with no references; the system fills the gaps.
 ---
 
-# Sonder (v0.2.1)
+# Sonder (v0.2.2)
 
 Sonder turns a vague request ("make me a premium site for X") into a site that looks like a top studio made it. It does this with a fixed sequence of phases, a brief that every session reads, a ban list of vibe-coded tells, real measurements of reference sites, and a screenshot critique loop. The user should never have to specify everything by hand: when an input is missing, Sonder proposes it and asks for a quick yes or no.
 
@@ -58,10 +58,10 @@ Gate: user confirms the reference set.
 
 Goal: one clear, ambitious concept with one signature moment that every visitor will experience.
 
-Read `references/concepting.md`, then propose 3 genuinely different concepts (different ideas, not variations of one idea). Each concept has:
+Read `references/concepting.md`. First decide whether the project is a **simple page** (waitlist, one-pager) or a **journey site** (a longer story across sections or pages), and say which; this sets where the signature moment must appear. Then propose 3 genuinely different concepts (different ideas, not variations of one idea). Each concept has:
 - a one-sentence concept
-- one signature moment (the single interaction people remember)
-- how a first-time visitor on a phone experiences it **without doing anything** (if they must find a control, drag, or hover to see it, say so plainly)
+- one signature moment (the single thing people remember; on a simple page it can be still)
+- how a first-time visitor on a phone meets it: for a simple page, what the first screen shows **without doing anything**; for a journey site, the first-screen hook and where in the journey the moment lands (if they must find a control, drag, or hover to see it, say so plainly)
 - type pairing and color rules, consistent with the user's vibe and brand direction
 - which reference techniques it borrows
 - the biggest risk of it looking generic or AI-made, stated honestly
@@ -71,7 +71,7 @@ At least one of the 3 concepts must be bold: the kind of idea a top studio would
 
 Recommend one, with reasons tied to the audience and the vibe. Then the user picks or mixes.
 
-Gate: user picks a direction. Write the Concept and Signature moment sections of `DESIGN.md`.
+Gate: user picks a direction. Write the Concept section of `DESIGN.md`, including the scale and the signature moment.
 
 ## Phase 3: System
 
@@ -110,14 +110,14 @@ If a concept depends on material only the user can make (hand-drawn marks, photo
 
 Run after every section, after the signature moment is built, and again on the full page. Read `references/critique-rubric.md` for the full rubric.
 
-1. Screenshot the current state at 1440 and 390 with `scripts/capture.mjs`. For the signature moment, also capture a short sequence of frames (for example at 0s, 1s, 2s, 3s after load) so the moment itself is judged, not just the end state.
+1. Screenshot the current state at 1440 and 390 with `scripts/capture.mjs`. If anything moves on load, also capture a short sequence of frames (for example at 0s, 1s, 2s, 3s after load) so the moment itself is judged, not just the end state.
 2. View the screenshots next to the reference screenshots and `DESIGN.md`.
-3. Run the **3-second test**: looking at the 390 captures as a first-time visitor who does nothing, is the signature moment clearly visible within 3 seconds? Is the key idea legible at normal reading distance? If not, that is the number one issue, above everything else.
+3. Run the **first-screen test** (see the rubric): looking at the 390 first screen as a first-time visitor who does nothing, does it show the signature within 3 seconds (simple page), or a strong hook for it (journey site)? Is the key idea legible at normal reading distance? On a journey site, also scroll normally and check the moment lands where `DESIGN.md` says. If not, that is the number one issue, above everything else.
 4. Acting as a demanding senior design director at a top studio, list the 10 things that make it look less premium than the references, ranked by impact, each with a specific fix in numbers ("heading is 64px, should be 96px with -0.04em tracking").
 5. Check every item on the ban list.
 6. Score the rubric. Score strictly: 5 means it would hold up next to the best reference at the same width. When in doubt, score lower. If the user has shared their own scores before, note how yours compared and correct for any leniency.
 7. Fix only the top 3, then repeat. Usually 2 or 3 rounds per section.
-8. Stop when every rubric dimension scores 4 or higher and the 3-second test passes, or tell the user what is blocking it (often a missing real asset).
+8. Stop when every rubric dimension scores 4 or higher and the first-screen test passes, or tell the user what is blocking it (often a missing real asset).
 
 Fixing only the top 3 per round prevents broad rewrites that undo good work.
 
@@ -127,10 +127,10 @@ After presenting scores, invite the user to give their own 1 to 5 scores. Log bo
 
 Only after the static page passes. Read `references/motion-playbook.md`.
 
-1. Build the signature moment first and get it right on its own. It must play or reveal itself without user action; any interaction (drag, hover, tap) is an optional extra, never the only way to see it. Provide a small replay control if it plays once.
+1. If the signature moment moves, build it first and get it right on its own. It must play or reveal itself through normal viewing or scrolling; any interaction (drag, hover, tap) is an optional extra, never the only way to see it. Provide a small replay control if it plays once. A still signature on a simple page needs no motion; skip to step 2.
 2. Then add the small set of supporting motions defined in `DESIGN.md`. Nothing else moves.
 3. Respect `prefers-reduced-motion`.
-4. Re-run the 3-second test with frame captures.
+4. Re-run the first-screen test with frame captures.
 5. Report the chosen timings and why.
 
 ## Phase 7: Ship and set up
@@ -150,7 +150,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 ## Working principles
 
 - **Numbers over adjectives.** "More elegant" produces random changes. "Headline 128px, weight 300, tracking -0.05em" produces the intended change.
-- **One signature moment, and everyone sees it.** A premium site has one idea people remember. If visitors have to discover it, most never will.
+- **One signature moment, and everyone sees it.** A premium site has one idea people remember. On a simple page it is on the first screen; on a longer journey the first screen promises it and normal scrolling delivers it. If visitors have to discover it, most never will.
 - **Ambition over cleverness.** A safe, clever idea executed well is still forgettable. Aim for what a top studio would pitch.
 - **Real over generated.** Real logos, real recordings, real numbers, real hand-made marks. If something real is missing, leave a placeholder and say so.
 - **Verify, don't estimate.** Measure references and check numbers against the code.
@@ -162,7 +162,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 ## Quick commands
 
 - "sonder brief" → Phase 0 to 3, producing `DESIGN.md`
-- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the 3-second test, and capture a 1440 screenshot plus a short screen recording for outreach (`scripts/capture.mjs <url> <outDir> --video 6000`)
+- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the first-screen test, and capture a 1440 screenshot plus a short screen recording for outreach (`scripts/capture.mjs <url> <outDir> --video 6000`)
 - "sonder critique" → Phase 5 on whatever exists now
 - "sonder ship" → Phase 7, including setup and deployment
 
@@ -170,7 +170,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 
 - `assets/DESIGN.template.md`: the brief every project fills in. Copy to the project root as `DESIGN.md`.
 - `references/ban-list.md`: tells that make a site look AI-generated. Read in Phase 3 and every critique.
-- `references/critique-rubric.md`: scoring rubric, 3-second test, critique prompt, and ship checklist. Read in Phase 5, 6 and 7.
+- `references/critique-rubric.md`: scoring rubric, first-screen test, critique prompt, and ship checklist. Read in Phase 5, 6 and 7.
 - `references/concepting.md`: how to generate ambitious concepts and visible signature moments. Read in Phase 2.
 - `references/motion-playbook.md`: easing, timing, and performance rules. Read in Phase 3 and 6.
 - `references/reference-library.md`: curated premium reference sites by mood. Read in Phase 1 when the user has no references.
