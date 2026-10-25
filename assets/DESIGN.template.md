@@ -13,19 +13,24 @@
 - **Facts we can state publicly:** [numbers, clients, awards. Nothing invented]
 - **Missing assets:** [PLACEHOLDER: list]
 - **Constraints:** [brand colors, stack, deadline, hosting]
+- **Vibe (user's own words):** [how it should feel: materials, eras, moods, textures, moodboard links]
+- **Brand and palette (user's own words):** [existing brand to follow, or open; light/dark preference; colors to love or avoid; brands not to resemble]
+- **Sources consolidated:** [if decisions came from existing docs, list each file]
 
 ## 2. References
 
-| Site | 3 techniques to borrow (with numbers) | Do NOT copy |
+| Site | 3 techniques to borrow (measured numbers) | Do NOT copy |
 |---|---|---|
 | [site] | 1. 2. 3. | |
 
-Screenshots live in `/references/<site>/`.
+Screenshots and measure.json files live in `/references/<site>/`.
 
 ## 3. Concept
 
 - **Concept:** [one sentence]
-- **Signature moment:** [the single interaction people remember, and how it works on mobile]
+- **Signature moment:** [the single moment people remember]
+- **How a first-time phone visitor sees it without doing anything:** [what happens in the first 3 seconds]
+- **Ambition check:** [Would this plausibly win Site of the Day? Why or why not]
 - **Why this concept fits the audience:** [one or two sentences]
 - **Biggest risk and how we avoid it:** [honest]
 
@@ -85,5 +90,5 @@ All items in Sonder's ban list apply. Project-specific bans:
 
 ## 10. Critique log
 
-| Round | Section | Top 3 fixed | Rubric scores |
-|---|---|---|---|
+| Round | Section | 3-second test | Top 3 fixed | Sonder scores | User scores |
+|---|---|---|---|---|---|
