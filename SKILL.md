@@ -3,7 +3,7 @@ name: sonder
 description: Sonder is a repeatable system for designing and building premium, award-level websites and web apps that never look AI-generated or vibe-coded. Use this skill whenever the user wants to build, redesign, rebrand, or refine a website, landing page, waitlist page, portfolio, studio site, product site, or web app UI, or asks for something "premium", "beautiful", "clean", "not vibe coded", "Awwwards-level", or "like [reference site]". Also use it for concept redesigns of a prospect's homepage, for design direction or concepting before code, for deploying and setting up a finished site, and whenever the user says "run sonder", "sonder brief", "sonder concept", "sonder critique", "sonder ship", or names a phase. Use it even if the user only gives a one-line request with no references; the system fills the gaps.
 ---
 
-# Sonder (v0.2.3)
+# Sonder (v0.2.4)
 
 Sonder turns a vague request ("make me a premium site for X") into a site that looks like a top studio made it. It does this with a fixed sequence of phases, a brief that every session reads, a ban list of vibe-coded tells, real measurements of reference sites, and a screenshot critique loop. The user should never have to specify everything by hand: when an input is missing, Sonder proposes it and asks for a quick yes or no.
 
@@ -67,6 +67,8 @@ Read `references/concepting.md`. First decide whether the project is a **simple 
 - the biggest risk of it looking generic or AI-made, stated honestly
 - an honest ambition rating: "Would this plausibly win Awwwards Site of the Day? Yes / maybe / no, because..."
 
+For a product or hardware site (a physical object, or a product whose workings can be drawn), consider a concept where a technical illustration of the real thing carries the idea: an exploded view, a cutaway, or layers coming apart. `references/concepting.md` (Technical illustrations) says when this fits and how to keep it from looking like a generic blueprint.
+
 At least one of the 3 concepts must be bold: the kind of idea a top studio would pitch, even if harder to build. If all three feel safe or merely clever, discard them and think again before showing anything.
 
 Recommend one, with reasons tied to the audience and the vibe. Then the user picks or mixes.
@@ -105,6 +107,12 @@ Order: hero and navigation first, then each section top to bottom, then footer, 
 4. Commit once it passes.
 
 If a concept depends on material only the user can make (hand-drawn marks, photography, a voice recording), build with clearly labeled placeholders and tell the user exactly what to create and in what format.
+
+**Technical illustrations (optional handoff).** When the chosen concept needs a drawing of a physical object or of how something works, and Jakub Krehel's `teardown` skill is installed, hand the drawing to it instead of drawing by hand. If it is not installed, tell the user it can be added with `npx skills@latest add jakubkrehel/skills --skill teardown`, and use a labeled placeholder meanwhile. Give teardown:
+- the evidence: the user's product photos, CAD files or specs. Ask for them; never reconstruct a real product's internals from a guess. Hidden construction is omitted or labeled illustrative, as teardown's `evidence.md` records.
+- the look from `DESIGN.md`: the palette roles, line color, the site's type for labels, and the exact output size and view the section needs. `DESIGN.md` overrides teardown's default paper-and-ink styling and its typography and color handoffs.
+- the deliverable: an SVG placed in the project (PNG only for social images), plus the assembled and exploded states if the concept moves between them.
+Then critique the drawing in place like any other asset. If the exploded view is the signature moment, it follows the signature rules: it plays on load or with normal scrolling, never only behind a toggle.
 
 ## Phase 5: Critique loop
 
@@ -154,7 +162,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 - **Numbers over adjectives.** "More elegant" produces random changes. "Headline 128px, weight 300, tracking -0.05em" produces the intended change.
 - **One signature moment, and everyone sees it.** A premium site has one idea people remember. On a simple page it is on the first screen; on a longer journey the first screen promises it and normal scrolling delivers it. If visitors have to discover it, most never will.
 - **Ambition over cleverness.** A safe, clever idea executed well is still forgettable. Aim for what a top studio would pitch.
-- **Real over generated.** Real logos, real recordings, real numbers, real hand-made marks. If something real is missing, leave a placeholder and say so.
+- **Real over generated.** Real logos, real recordings, real numbers, real hand-made marks. If something real is missing, leave a placeholder and say so. A technical illustration counts as real when it is built from the actual product's photos, CAD or specs; one with invented internals of a real product does not.
 - **Verify, don't estimate.** Measure references and check numbers against the code.
 - **The user writes the voice.** Do not write marketing copy unless asked. When asked, write plain sentences that explain the thing. No strings of short punchy fragments as kickers, and no forced origin stories.
 - **Mobile is often primary.** Social traffic arrives on phones. Design the 390px version with the same care, never as a fallback.
@@ -164,7 +172,7 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 ## Quick commands
 
 - "sonder brief" → Phase 0 to 3, producing `DESIGN.md`
-- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the first-screen test, and capture a 1440 screenshot plus a short screen recording for outreach (`scripts/capture.mjs <url> <outDir> --video 6000`)
+- "sonder concept [company]" → a single premium concept hero for a prospect's homepage: fetch their current site, run a short Phase 0 to 2 (still ask the vibe question if the user is present), build only the hero, critique it including the first-screen test, and capture a 1440 screenshot plus a short screen recording for outreach (`scripts/capture.mjs <url> <outDir> --video 6000`). For a physical-product brand, a teardown of their own product built from their public product photos often makes the strongest hero; label it a concept illustration, since internals can't be known from photos.
 - "sonder critique" → Phase 5 on whatever exists now
 - "sonder ship" → Phase 7, including setup and deployment
 

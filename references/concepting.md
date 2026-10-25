@@ -14,6 +14,26 @@ Look for an idea already inside the brand, so the site could only belong to this
 
 The best concepts are ones where the trick and the evidence are the same thing.
 
+## Technical illustrations (product and hardware sites)
+
+A drawing of the real object, taken apart or cut open, can be the whole concept when what the product is made of, or how it works, is the selling point: hardware, devices, furniture, packaging, tools, and even non-physical ideas that can be drawn as layers (pixels, a stack of interface layers, a data pipeline).
+
+It fits when:
+- the construction is the proof (precision, materials, repairability, clever engineering), so explaining it sells it;
+- real evidence exists or can be requested: product photos, CAD, specs. Without it, internals become invention, which Sonder never presents as fact.
+
+Strong signature moments it enables:
+- the object assembles or explodes as the page loads (simple page) or as the visitor scrolls (journey site);
+- each part pulls out to reveal the line of copy that explains it;
+- the drawing is in the site's own palette and line weight, so it reads as the brand's artwork, not a stock diagram.
+
+Risks, named honestly:
+- **The default dev-tool look.** Blueprint grids, monospace labels and corner brackets are already listed as a generic trap. Label parts in the site's typefaces, keep annotation sparse, and put no grid behind it unless the concept truly needs one.
+- **Decoration without purpose.** If the drawing explains nothing the visitor cares about, cut it.
+- **Fake precision.** Invented dimensions or internals on a real product mislead. Draw only what the evidence shows; label the rest as illustrative.
+
+Building it: Phase 4 hands the drawing to the `teardown` skill when it is installed (see SKILL.md, Phase 4).
+
 ## The ambition bar
 
 At least one concept must be bold: the kind of idea a top studio would pitch to win the client, even if it is harder to build. For every concept, answer honestly: "Would this plausibly win Awwwards Site of the Day? Yes / maybe / no, because..."

@@ -12,7 +12,7 @@ Use in Phase 1 when the user has no references. Propose 4 to 6 that fit the proj
 - **malvah.co**: confident, minimal brand experiences with rhythm and pacing over decoration.
 
 ## Product as hero, technical and tactile
-- **ghost.ai**: now a hardware launch page ("Core"). Useful for the product name spread across the full screen width with the object standing in front of the letters, and quiet rows of facts in small boxed labels. Its earlier warm-grey teardown page is gone, so check the live site before relying on older notes.
+- **ghost.ai**: now a hardware launch page ("Core"). Useful for the product name spread across the full screen width with the object standing in front of the letters, and quiet rows of facts in small boxed labels. Its earlier warm-grey teardown page is gone, so check the live site before relying on older notes. For the teardown technique itself, see Technical illustrations in `concepting.md`.
 - **14islands.com**: playful interactive experiments alongside client work (Blobmixer).
 
 ## Immersive 3D and WebGL
