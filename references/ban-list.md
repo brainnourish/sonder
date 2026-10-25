@@ -14,7 +14,7 @@ Check every item during Phase 3 and in every critique round. If a ban is broken,
 
 ## Surfaces and effects
 - Gradient blobs, mesh gradients, aurora backgrounds
-- Glassmorphism (frosted cards) as the default surface
+- Glassmorphism (frosted cards) as the default surface (a translucent nav bar or sheet with content scrolling underneath is fine)
 - Glows behind cards or buttons
 - Rounded cards with drop shadows as the default container
 - Purple, violet, or blue-to-purple gradients as the accent
@@ -35,6 +35,16 @@ Check every item during Phase 3 and in every critique round. If a ban is broken,
 - Parallax on everything
 - Animations that run on load with no purpose
 - Scroll-jacking that takes control away from the user
+
+### Interface motion only
+These apply only to interface elements: buttons, links, menus, popovers, modals, drawers, toasts, tooltips, tabs, form fields, and drag interactions. They never apply to the signature moment or marketing reveals. Values come from `motion-playbook.md`, and DESIGN.md can override them with a stated reason.
+- ease-in on interface motion
+- Growing an element from `scale(0)`
+- Interface animations longer than 300ms (drawers and full-screen sheets up to 500ms)
+- Buttons and controls that react only on release instead of on press
+- Animations that lock input until they finish, or can't be reversed mid-way
+- Animating keyboard-triggered actions (shortcuts, command palette)
+- Popovers and menus that grow from their center instead of from the control that opened them
 
 ## Content and copy
 - Emoji in UI, sparkle icons, robot or brain illustrations

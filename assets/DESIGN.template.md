@@ -62,10 +62,14 @@ Screenshots and measure.json files live in `/references/<site>/`.
 ## 5. Motion
 
 - Smooth scroll: [Lenis / none]
-- Easing: [e.g. cubic-bezier(0.22, 1, 0.36, 1)] · Durations: [e.g. 600-900ms]
+- Interface easing: [e.g. ease-out cubic-bezier(0.23, 1, 0.32, 1) · ease-in-out cubic-bezier(0.77, 0, 0.175, 1)]
+- Interface durations: [e.g. press 100-160ms · menus 150-250ms · modals 200-300ms · drawers up to 500ms]
+- Springs: [e.g. default bounce 0, 0.4s · after a flick bounce 0.2]
+- Signature and marketing motion: [easing and durations from the concept, e.g. cubic-bezier(0.22, 1, 0.36, 1), 600-900ms]
 - What moves: [signature moment] + [max 2-3 supporting motions]
 - What never moves: [body copy, nav, etc.]
-- Reduced motion behavior: [ ]
+- Reduced motion, transparency, and contrast behavior: [ ]
+- Overrides of playbook defaults: [default → new value · reason]
 
 ## 6. Structure
 

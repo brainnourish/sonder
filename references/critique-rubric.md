@@ -29,7 +29,7 @@ Also look for: empty areas that feel unfinished rather than intentional, copy th
 4. **Restraint**: nothing decorative without purpose, no ban list items. (Restraint is not faintness: the key idea must still be loud enough.)
 5. **Material**: real assets and real content; nothing reads as filler or stock; placeholders are clearly marked.
 6. **Mobile**: the 390 view is designed, not shrunk; touch targets 44px+; nothing overflows.
-7. **Motion** (Phase 6+): purposeful, consistent easing, smooth, the signature moment lands.
+7. **Motion** (Phase 6+): purposeful and consistent. Interface motion follows the playbook (right easing, under 300ms, responds on press, can be interrupted, follows the finger). Signature and marketing motion follows the concept and lands. Smooth at 60fps. Judge against DESIGN.md, including its stated overrides.
 8. **Distinctiveness**: could this only belong to this brand, or could it be any startup?
 
 ### Scoring honestly
@@ -65,7 +65,9 @@ After presenting scores, invite the user to give their own 1 to 5 scores before 
 - [ ] Images compressed and sized; videos compressed with poster frames
 - [ ] Fonts subset and preloaded; real fallback stacks
 - [ ] Text contrast 4.5:1 (3:1 for large text); focus states visible; real buttons and links
-- [ ] prefers-reduced-motion respected
+- [ ] prefers-reduced-motion, prefers-reduced-transparency, and prefers-contrast respected
+- [ ] Worst-case content tested: very long names and words, long emails, one-letter names, empty lists, huge numbers, long button labels, non-Latin text; nothing overflows, clips, or breaks the layout
+- [ ] Phone fixes: no 100vh jump (use svh/dvh), inputs 16px or larger so iOS doesn't zoom, no grey tap flash, hover styles don't stick after a tap, content clears the notch and home bar (safe areas), long-press doesn't select button text
 - [ ] Open Graph image (1200x630), title, description, and favicon set and checked with a preview tool
 - [ ] Analytics installed
 - [ ] Forms wired to a real destination and tested with a real submission

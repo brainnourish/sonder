@@ -3,7 +3,7 @@ name: sonder
 description: Sonder is a repeatable system for designing and building premium, award-level websites and web apps that never look AI-generated or vibe-coded. Use this skill whenever the user wants to build, redesign, rebrand, or refine a website, landing page, waitlist page, portfolio, studio site, product site, or web app UI, or asks for something "premium", "beautiful", "clean", "not vibe coded", "Awwwards-level", or "like [reference site]". Also use it for concept redesigns of a prospect's homepage, for design direction or concepting before code, for deploying and setting up a finished site, and whenever the user says "run sonder", "sonder brief", "sonder concept", "sonder critique", "sonder ship", or names a phase. Use it even if the user only gives a one-line request with no references; the system fills the gaps.
 ---
 
-# Sonder (v0.2.2)
+# Sonder (v0.2.3)
 
 Sonder turns a vague request ("make me a premium site for X") into a site that looks like a top studio made it. It does this with a fixed sequence of phases, a brief that every session reads, a ban list of vibe-coded tells, real measurements of reference sites, and a screenshot critique loop. The user should never have to specify everything by hand: when an input is missing, Sonder proposes it and asks for a quick yes or no.
 
@@ -82,7 +82,7 @@ Fill the Tokens, Type, Layout, Motion, and Copy sections of `DESIGN.md`:
 - type families, weights, a type scale in px, line heights, tracking
 - spacing base and section padding at desktop and mobile
 - grid, max widths, side margins
-- motion: easing curves, durations, which elements may move and which may not (see `references/motion-playbook.md`)
+- motion: interface easing, durations, and spring settings; the signature and marketing timings; which elements may move and which may not; and any override of a playbook default with its reason (see `references/motion-playbook.md`)
 - copy rules: real copy from the user, or placeholders at realistic lengths; never generated marketing copy unless the user asks
 
 Be bold with the numbers. Premium pages almost always have extreme contrast between the largest and smallest type (often 10 to 20 times). Timid scales produce generic pages.
@@ -129,9 +129,11 @@ Only after the static page passes. Read `references/motion-playbook.md`.
 
 1. If the signature moment moves, build it first and get it right on its own. It must play or reveal itself through normal viewing or scrolling; any interaction (drag, hover, tap) is an optional extra, never the only way to see it. Provide a small replay control if it plays once. A still signature on a simple page needs no motion; skip to step 2.
 2. Then add the small set of supporting motions defined in `DESIGN.md`. Nothing else moves.
-3. Respect `prefers-reduced-motion`.
-4. Re-run the first-screen test with frame captures.
-5. Report the chosen timings and why.
+3. Interface motion (buttons, menus, modals, drawers, drag) follows the playbook's interface rules. Signature and marketing motion follows the concept; the interface rules never limit it. `DESIGN.md` can override any motion default with a stated reason.
+4. Respect `prefers-reduced-motion`, `prefers-reduced-transparency`, and `prefers-contrast`.
+5. Re-run the first-screen test with frame captures.
+6. If Emil Kowalski's skills are installed, run `review-animations` on the motion, and `animation-performance` if anything drops frames.
+7. Report the chosen timings and why.
 
 ## Phase 7: Ship and set up
 
@@ -172,7 +174,8 @@ Do the setup, don't just check it. Stop only for steps that need the user's acco
 - `references/ban-list.md`: tells that make a site look AI-generated. Read in Phase 3 and every critique.
 - `references/critique-rubric.md`: scoring rubric, first-screen test, critique prompt, and ship checklist. Read in Phase 5, 6 and 7.
 - `references/concepting.md`: how to generate ambitious concepts and visible signature moments. Read in Phase 2.
-- `references/motion-playbook.md`: easing, timing, and performance rules. Read in Phase 3 and 6.
+- `references/motion-playbook.md`: interface and signature motion rules, easing, timing, springs, accessibility, and performance. Read in Phase 3 and 6.
+- `licenses/emilkowalski-skills.txt`: MIT license for the interface motion rules adapted from Emil Kowalski's skills.
 - `references/reference-library.md`: curated premium reference sites by mood. Read in Phase 1 when the user has no references.
 - `scripts/capture.mjs`: Playwright screenshots at 390 and 1440 (add 768 with `--viewports 390,768,1440`), at scroll depths, as a timed frame sequence, or as a short video recording (`--video`). Run it from the project folder so it finds the project's Playwright.
 - `scripts/measure.mjs`: Playwright measurement of real computed type and color values on any URL.
